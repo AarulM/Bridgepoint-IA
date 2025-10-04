@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Here we will have links to external pages including stylsheets (css) and scripts. Most pages require external references as a lot of the website utilizes similar formatting/styling and has dedicated pages for javaScript-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | BridgePoint</title>
+    <link rel="stylesheet" href="homeStyle.css">
+    <style>
+        /* Main content container that encpatures the overall screen display and structure*/
+        #main-content {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Container styling that has been placed in the middle of the screen to ensure alignment*/
+        .container {
+            background: linear-gradient(135deg, #614caf, #5f33a5);
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Main heading for the container that is placed in the middle of the screen */
+        .container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Paragraph styling for the container that is placed in the middle of the screen */
+         /* This is the main text that describes the purpose of the website */
+         /* The font size and line height have been adjusted to ensure readability */
+         /* The margin bottom has been added to ensure spacing between the paragraph and the button below */
+        .container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* User profile container */
+        .user-profile {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        
+        /* Profile heading styling that is placed in the middle of the screen */
+        .profile-heading {
+            color: #614caf;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Profile details container that holds the individual profile items */
+         /* The display has been set to grid to ensure that the items are aligned properly */
+         /* The gap has been added to ensure spacing between the items */
+         /* The margin bottom has been added to ensure spacing between the profile details and the button below */
+        .profile-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-item {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Profile label styling that is placed in the middle of the screen */
+        .profile-label {
+            font-weight: 500;
+            width: 100px;
+            color: #333;
+        }
+        
+        /* Profile value styling that is placed in the middle of the screen */
+        .profile-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #0071FF;
+            flex: 1;
+        }
+        /* header 1 styling*/
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        h2{
+            color: #ffffff;
+        }
+
+        /* Navbar styling with buttons and button hover color changes. Thses are effects intended for hte UI development and aesthetics*/
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #f0ac1a;
+            color: #000000;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #c588f7;
+        }
+        
+        /* Logout button styling */
+        #logout {
+            background-color: #0071FF;
+            color: white; /* Text color for the button */
+            border: none;
+            padding: 12px 24px; /* Padding for the button to ensure it is clickable and has a good size */
+            border-radius: 8px; /* Rounded corners for the button */
+            font-size: 1rem; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        /* Logout button hover effect */
+         /* The background color has been changed to a darker shade of blue to ensure that the button is visible and stands out */
+        #logout:hover {
+            background-color: #0058cc;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        /* Responsive design for smaller screens. Basically the container changes size dynamically based on the text input */
+         /* The flex-direction has been changed to column to ensure that the buttons are stacked on top of each other */
+         /* The width has been set to 100% to ensure that the buttons take up the full width of the screen */
+         /* The margin bottom has been added to ensure spacing between the buttons */
+         /* The text-align has been set to center to ensure that the text is centered within the button */
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+            }
+            
+            .button-container button,
+            .button-container a {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+    <script type="module" src="./homepage.js"></script> <!-- JavaScript file for handling user profile data and logout functionality -->
+</head>
+<body>
+
+    <nav id="navbar"><!-- Navigation bar for the website -->
+      <ul>
+        <li class="home-li"><a class="active-link" aria-current="page" href="homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="employment.html">Employment Opportunities</a></li>
+        <li><a class="accent-link" href="FindHelp.html">Find Help</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content">
+        <h1>Welcome to BridgePoint</h1>
+        
+        <div class="container">
+            <h2>Your Gateway to Community Support</h2>
+            <p>
+                BridgePoint connects individuals with resources and opportunities to improve their living situation and overall well-being.
+                Our platform offers easy navigation to essential services and support networks.
+            </p>
+            <a href="about.html" class="btn">Learn More About BridgePoint</a>
+        </div>
+        
+        <!-- User profile section that displays the logged-in user's information -->
+         <!-- The user profile section is hidden by default and is displayed when the user is logged in -->
+         <!-- The profile details are dynamically populated using JavaScript based on the logged-in user's information -->
+        <div class="user-profile">
+            <h2 class="profile-heading">Your Profile Information</h2>
+            <div class="profile-details">
+                <div class="profile-item">
+                    <div class="profile-label">First Name:</div>
+                    <div class="profile-value" id="loggedUserFName"></div>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-label">Last Name:</div>
+                    <div class="profile-value" id="loggedUserLName"></div>
+                </div>
+                <div class="profile-item">
+                    <div class="profile-label">Email:</div>
+                    <div class="profile-value" id="loggedUserEmail"></div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="logout">Logout</button>
+                <a href="about.html" class="btn">Learn More About BridgePoint</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

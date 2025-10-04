@@ -1,0 +1,188 @@
+/* Css for the login and signup form */
+/*general font and body styles*/ 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #11121a;
+    background: #11121a;
+    background-attachment: fixed;
+}
+/*container for the form*/
+/*this is where the form will be displayed*/
+.container{
+    background:rgba(255, 255, 255, 0.95);
+    width:450px;
+    padding:1.5rem;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 113, 255, 0.2);
+}
+/*this is the container for the logo*/
+/*it will be displayed at the top of the form*/
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+form{
+    margin:0 2rem;
+}
+/*this is the title of the form*/
+/*it will be displayed at the top of the form*/
+.form-title{
+    font-size:1.8rem;
+    font-weight:bold;
+    text-align:center;
+    padding:1.3rem;
+    margin-bottom:0.4rem;
+    color: #11121a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/*this is the input field for the form*/
+/*it will be displayed in the form*/
+input{
+    color:inherit;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    border-bottom:1px solid #505050;
+    padding-left:1.5rem;
+    font-size:15px;
+}
+.input-group{
+    padding:1% 0;
+    position:relative;
+    margin-bottom: 1.5rem;
+}
+.input-group i{
+    position:absolute;
+    color: #0071FF;
+}
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border-bottom:2px solid #0071FF;
+}
+input::placeholder{
+    color:transparent;
+}
+
+/*this is the label for the input field*/
+/*it will be displayed on top of the input field*/
+/* a label is used to describe the input field */
+label{
+    color:#757575;
+    position:relative;
+    left:1.2em;
+    top:-1.3em;
+    cursor:auto;
+    transition:0.3s ease all;
+}
+/*this is the label for the input field*/
+input:focus~label,input:not(:placeholder-shown)~label{
+    top:-3em;
+    color:#0071FF;
+    font-size:15px;
+}
+button{
+    font-size:1.1rem;
+    padding:10px 0;
+    border-radius:5px;
+    border:none;
+    width:100%;
+    background: #0071FF;
+    color:white;
+    transition:0.4s;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+button:hover{
+    background:#0058cc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/*this is the link for the form*/
+/*a link is used to navigate to another page*/
+.links{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    padding:0 1rem;
+    margin-top:1.5rem;
+    font-weight:bold;
+}
+#signUpButton, #signInButton{
+    color:#0071FF;
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    letter-spacing: normal;
+}
+#signUpButton:hover, #signInButton:hover {
+    text-decoration:underline;
+    color:#0058cc;
+} 
+.messageDiv{
+    background-color:#a83232;
+    color:white;
+    padding:10px 20px;
+    margin:10px 0 20px;
+    border-radius: 5px;
+    font-size:1rem;
+    opacity:0;
+    animation: fadeIn 0.3s forwards, stay 2.7s 0.3s forwards, fadeOut 1s 3s forwards;
+}
+
+.messageDiv.success {
+    background-color: #28a745;  /* Green background for success messages */
+}
+
+/* keyframes for the messageDiv */
+/* the messageDiv will fade in, stay for a while, and then fade out */
+/* these are cool animations for the user to see for a short period of time */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes stay {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+/*this is the button for the form*/
+/*it will be displayed in the form*/
+/*after the button is clicked, the button will have a gradient effect*/
+.btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+.btn:hover:after {
+    left: 100%;
+}

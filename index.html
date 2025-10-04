@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Here we will have links to external pages including stylsheets (css) and scripts. Most pages require external references as a lot of the website utilizes similar formatting/styling and has dedicated pages for javaScript-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eudaimonia - Member Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font for icons -->
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet for the login page -->
+    <script type="module" src="firebaseauth.js"></script> <!-- Firebase authentication script for handling user sign-in and sign-up -->
+</head>
+<body>
+    <div class="container" id="signup" style="display:none;">
+      <div class="logo-container">
+        <img src="assets/bridgepoint.png" height="70"></img> <!-- Logo for the BridgePoint application, at tpo of the input fields -->
+      </div>
+      <h1 class="form-title">Join BridgePoint</h1>
+      <form method="post" action="">
+        <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+        <div class="input-group">
+           <i class="fas fa-user"></i>
+           <input type="text"  id="fName" placeholder="First Name" required>
+           <label for="fname">First Name</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text"  id="lName" placeholder="Last Name" required>
+            <label for="lName">Last Name</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i> <!-- This icon is for the email input field, used for UI development -->
+            <input type="email"  id="rEmail" placeholder="Email" required>
+            <label for="rEmail">Email</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="rPassword"  placeholder="Password" required>
+            <label for="rPassword">Password</label>
+        </div>
+       <button class="btn" id="submitSignUp">Sign Up</button>
+      </form>
+      <div class="links">
+        <p>Already have an account?</p>
+        <button id="signInButton">Sign In</button>
+      </div>
+    </div>
+
+  <div class="container" id="signIn">
+        <div class="logo-container">
+          <img src="assets/bridgepoint.png" height="70"></img>
+        </div>
+        <h1 class="form-title">Welcome Back</h1> 
+        <form method="post" action="">
+          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+          <div class="input-group">
+              <i class="fas fa-envelope"></i> <!-- This icon is for the email input field, used for UI development -->
+              <input type="email"  id="email" placeholder="Email" required>
+              <label for="email">Email</label>
+          </div>
+          <div class="input-group"> 
+              <i class="fas fa-lock"></i> <!-- This icon is for the password input field, used for UI development -->
+            <input type="password" id="password"  placeholder="Password" required>
+              <label for="password">Password</label>
+          </div>
+         <button class="btn" id="submitSignIn">Sign In</button>
+        </form>
+        <div class="links">
+          <p>Don't have an account yet?</p>
+          <button id="signUpButton">Sign Up</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>

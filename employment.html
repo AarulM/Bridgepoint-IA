@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Here we will have links to external pages including stylsheets (css) and scripts. Most pages require external references as a lot of the website utilizes similar formatting/styling and has dedicated pages for javaScript-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employment Opportunities | BridgePoint</title>
+  <script src="employment.js" defer></script>
+  <link rel="stylesheet" href="homeStyle.css">
+  <style>
+    
+    /* main content container that encapsulates the overall screen display and structure */
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    
+    /* container styling that has been placed in the middle of the screen to ensure alignment and size */
+    .jobs-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /*section header "available positions" styling for the employment opportunities page */
+    .section-header {
+      background: #3a1957;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    /*job card styling for the employment opportunities page */
+    /*each job card will have a background color of #222222, a border radius of 8px, a box shadow of 0 3px 10px rgba(0,0,0,0.3), padding of 20px, margin bottom of 20px, a transition of transform 0.2s, and a border of 1px solid #444444 */
+    /*all styles that start with job are related to job card css styling */
+    .job-card {
+      background-color: #222222;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+      border: 1px solid #444444;
+    }
+    
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(106, 48, 147, 0.3);
+    }
+    
+    .job-title {
+      color: #b388ff;
+      margin-top: 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    
+    .job-company {
+      color: #e0e0e0;
+      font-weight: 600;
+      margin: 5px 0 15px;
+    }
+    
+    .job-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .job-detail {
+      background-color: #333333;
+      padding: 10px;
+      border-radius: 5px;
+      color: #e0e0e0;
+      font-weight: 500;
+    }
+    
+    .job-tag {
+      display: inline-block;
+      background-color: #5a2b82;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .job-match {
+      display: inline-block;
+      background-color: #6a3093;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-left: auto;
+      font-weight: bold;
+    }
+    /*apply now button styling for the employment opportunities page */
+    /*the apply now button will have a background color of #6a3093, a color of white, a border of none, padding of 12px 24px, a border radius of 5px, a font weight of 600, a cursor of pointer, a transition of background color 0.3s, and a font size of 1rem */
+    .btn-apply {
+      background-color: #6a3093;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+    }
+    
+    .btn-apply:hover {
+      background-color: #8441bb;
+    }
+    
+    /*error message styling for the employment opportunities page */
+    /*the error message will have a background color of #333333, padding of 30px, text align center, border radius of 8px, margin top of 20px, border of 1px solid #444444, and a color of #e0e0e0 */
+    .no-match-message {
+      background-color: #333333;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 20px;
+      border: 1px solid #444444;
+      color: #e0e0e0;
+    }
+    
+    .match-explanation {
+      background-color: #333333;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      border: 1px solid #444444;
+      color: #e0e0e0;
+      font-weight: 500;
+    }
+    /*filter that is above the section header for the employment opportunities page */
+    /*the filter controls will have a display of flex, a gap of 15px, a margin bottom of 20px, and a flex wrap of wrap */
+    .filter-controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-select {
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: 1px solid #444444;
+      color: #e0e0e0;
+      background-color: #333333;
+      font-size: 0.95rem;
+    }
+    
+    .filter-select:focus {
+      border-color: #6a3093;
+      outline: none;
+    }
+    
+    /* Example job listing styling */
+    .job-description {
+      color: #e0e0e0;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+  
+    
+  </style>
+</head>
+<body>
+  <!-- same navigation bar used across all the pages. This part acts as a scaffold for all the pages, so it appears the same. Regardless, this snippet of the code must be inserted on every page -->
+  <nav id="navbar">
+    <ul>
+      <li class="home-li"><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="employment.html" class="active-link" aria-current="page">Employment Opportunities</a></li>
+      <li><a class="accent-link" href="FindHelp.html">Find Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content area for the Employment Opportunities page -->
+  <main>
+    <div class="jobs-container">
+      <h1>Employment Opportunities</h1>
+      
+      <div id="personalizedSection" style="display: none;">
+        <div class="match-explanation" id="matchExplanation">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+        
+        <div class="filter-controls">
+          <select id="jobTypeFilter" class="filter-select">
+            <option value="all">All Job Types</option>
+            <option value="full-time">Full-time Only</option>
+            <option value="part-time">Part-time Only</option>
+          </select>
+          <select id="sortOrder" class="filter-select">
+            <option value="match">Sort by Match</option>
+            <option value="wage-high">Highest Wage First</option>
+            <option value="wage-low">Lowest Wage First</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="section-header">
+        <h2>Available Positions</h2>
+      </div>
+      
+      <div id="jobListings">
+        <!-- Example job listing with better formatting -->
+        <div class="job-card">
+          <h3 class="job-title">Retail Associate</h3>
+          <p class="job-company">BridgePoint Store</p>
+          
+          <div class="job-details">
+            <div class="job-detail">$14-16/hour</div>
+            <div class="job-detail">Part-time</div>
+            <div class="job-detail">Entry Level</div>
+          </div>
+          
+          <p class="job-description">
+            Entry-level retail position with flexible hours. Responsibilities include assisting customers, 
+            operating cash registers, and maintaining store appearance.
+          </p>
+          
+          <div class="job-requirements">
+            <h4>Requirements:</h4>
+            <ul>
+              <li>Customer service skills</li>
+              <li>Basic math skills</li>
+            </ul>
+          </div>
+          
+          <div>
+            <span class="job-tag">Retail</span>
+            <span class="job-tag">Customer Service</span>
+            <button class="btn-apply">Apply Now</button>
+          </div>
+        </div>
+        
+        <!-- Additional job listings would be dynamically inserted here -->
+        <div class="loading-message">Loading employment opportunities...</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

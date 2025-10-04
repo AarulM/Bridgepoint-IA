@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Here we will have links to external pages including stylsheets (css) and scripts. Most pages require external references as a lot of the website utilizes similar formatting/styling and has dedicated pages for javaScript-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Help</title>
+  <link rel="stylesheet" href="homeStyle.css">
+  <script src="findHelp.js" defer></script>
+</head>
+<body>
+
+  <!-- Same navigation bar used across all the pages. 
+  This part acts as a scaffold for all the pages, so it appears the same. 
+  Regardless, this snippet of the code must be inserted on every page -->
+  <nav id="navbar">
+    <ul>
+      <li class="home-li"><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="employment.html">Employment Opportunities</a></li>
+      <li><a class="accent-link active-link" href="FindHelp.html" aria-current="page">Find Help</a></li>
+    </ul>
+  </nav>
+
+  
+  <!-- Main content area for the Find Help page -->
+  <main>
+    <h1>Find Support Organizations</h1>
+
+    <!-- Dropdown to select an organization -->
+    <label for="organization-select">Select an organization:</label>
+    <!-- This dropdown will be populated with organization names from the JavaScript -->
+    <!-- The onchange event will trigger the updateOrganizationDetails function to display the selected organization's details -->
+    <!-- The JavaScript will dynamically populate this dropdown with organization names -->
+    <select id="organization-select" onchange="updateOrganizationDetails()">
+      <option value="" disabled selected>Select an organization</option>
+    </select>
+    <br><br>
+    <!-- Organization details -->
+    <div id="organization-details">
+      <h2 id="org-name"></h2>
+      <p><strong>Address:</strong> <span id="org-address"></span></p>
+      <p><strong>Services:</strong> <span id="org-services"></span></p>
+      <p><strong>How it helps:</strong> <span id="org-help"></span></p>
+      <p><strong>Website: </strong> <span id="org-website"></span></p>
+    </div>
+    <br>
+    <!-- Map to show the location of the selected organization -->
+    <!-- The JavaScript will dynamically update the map location based on the selected organization's address -->
+    <h2>Map Location: </h2>
+    <iframe id="mapFrame" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </main>
+
+</body>
+</html>

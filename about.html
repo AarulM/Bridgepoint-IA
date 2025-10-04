@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Here we will have links to external pages including stylsheets (css) and scripts. Most pages require external references as a lot of the website utilizes similar formatting/styling and has dedicated pages for javaScript-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | BridgePoint</title>
+  <link rel="stylesheet" href="homeStyle.css">
+  <script src="script.js" defer></script>
+  <style>
+    
+    /* General body styling */
+    /* This sets the background color, text color, and line height for the entire page */
+    /* The background color is a dark shade to provide contrast with the text */
+    /* The text color is a light shade for better readability */
+    .container {
+      background: linear-gradient(135deg, #614caf, #5f33a5);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    
+    .container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    
+    .container p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Navbar styling */
+    /* This styles the navigation bar at the top of the page */
+    /* The navbar has a dark background with white text for contrast */
+    /* The links change color on hover for better user interaction */
+    .btn {
+      display: inline-block; 
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #f0ac1a;
+      color: #000000;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    /* Button hover effect */
+    /* This changes the background color of the button when hovered over */
+    .btn:hover {
+      background: #c588f7;
+    }
+
+    h1{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- same navigation bar used across all the pages. This part acts as a scaffold for all the pages, so it appears the same. Regardless, this snippet of the code must be inserted on every page -->
+  <nav id="navbar">
+    <ul>
+      <li class="home-li"><a href="homepage.html">Home</a></li>
+      <li><a href="about.html" class="active-link" aria-current="page">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="employment.html">Employment Opportunities</a></li>
+      <li><a class="accent-link" href="FindHelp.html">Find Help</a></li>
+    </ul>
+  </nav>
+
+ <!-- Main content area -->
+<!-- This section contains the main content of the page, including headings and paragraphs that describe the purpose and mission of BridgePoint -->
+<!-- The main content is wrapped in a <main> tag for semantic HTML, and an ID is added for accessibility -->
+  <main id="main-content">
+    <h1>About BridgePoint</h1>
+
+    <div class="container">
+      <h2>What is BridgePoint?</h2>
+      <p>
+        BridgePoint is a website designed to provide comprehensive support for individuals experiencing homelessness. 
+        The platform includes easy-to-navigate sections such as the Home Page, About, Contact, Employment Opportunities, and Finding Help.
+      </p>
+      <p>
+        Our goal is to bridge the gap between those in need and available resources, enhancing access to essential services while fostering a community of mutual support.
+        Currently in its prototype phase, BridgePoint is committed to continuous improvement and expansion to better serve those in need.
+      </p>
+    </div>
+
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>
+        BridgePoint is dedicated to fostering positive change through community service initiatives. We believe in the power of collective action to create a better world for all.
+        Our programs aim to address social challenges, promote inclusivity, and inspire others to make a meaningful impact. Specifically, we focus on providing resources and support for individuals experiencing homelessness, helping them find pathways to stability and success.
+      </p>
+      <p>
+        If you are an individual experiencing homelessness or know someone who is, we encourage you to reach out for assistance.
+        Our team is here to help connect you with the resources and support you need to navigate your journey towards stability and success.
+      </p>
+      <a href="contact.html" class="btn">Find Help</a>
+    </div>
+  </main>
+
+</body>
+</html>

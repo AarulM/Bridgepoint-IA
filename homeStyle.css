@@ -1,0 +1,96 @@
+/* css file for the home page of the website */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+:root{
+  --primary-color: #121212;
+  --hover-color: #8441bb;
+  --accent-color: #6a3093;
+  --text-color: #e0e0e0;
+  --active-color: #b388ff;
+  --border-color: #444444;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Different font uses*/
+html{
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: var(--primary-color);
+}
+
+/* Container for the main content */
+/* This is where the main content of the page will be displayed */
+/* It has a max-width to ensure it doesn't stretch too wide on larger screens */
+/* and has padding for spacing */
+main{
+  padding: min(5em, 7%);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* navbar styles */
+/* The navbar is styled to be sticky at the top of the page */
+/* It has a background color and contains a list of links */
+/* The links are styled to have padding and change color on hover */
+/* The active link has a different color and a border at the bottom */
+#navbar {
+  background-color: var(--primary-color);
+  position: sticky;
+}
+
+#navbar ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+#navbar .home-li{
+  margin-right: auto;
+}
+
+#navbar li{
+  display: flex;
+}
+
+#navbar a{
+  display: flex;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1em 2em;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+#navbar a:hover{
+  background-color: var(--hover-color);
+  color: white;
+}
+
+#navbar a.active-link{
+  color: var(--active-color);
+  border-bottom: 2px solid var(--active-color);
+}
+
+#navbar a.accent-link{
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 5px;
+  margin: 8px 0;
+  padding: 0.8em 1.5em;
+}
+
+#navbar a.accent-link:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
